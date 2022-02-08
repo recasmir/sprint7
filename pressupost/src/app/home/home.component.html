@@ -1,0 +1,65 @@
+<div class="container">
+<h3 class="mt-5">Que vol fer? </h3>
+
+<form [formGroup]="pressupostForm">
+
+    <div class="form-check mt-5">
+
+        <input class="form-check-input" 
+               type="checkbox" 
+               formControlName="web"
+            
+               (change)="calcular(500,'web',0)"
+               id="flexCheckDefault">
+
+        <label class="form-check-label"
+         for="flexCheckDefault">
+          Una pàgina web (500€)
+        </label>
+      </div>
+      <!-- <app-panell2 *ngIf="webService"></app-panell2> -->
+      <app-panell2 *ngIf="webService" (serveisWeb)="recalcularTotal($event)"></app-panell2>
+      <div class="form-check">
+
+        <input class="form-check-input" 
+               type="checkbox" 
+               formControlName="seo" 
+               (change)="calcular(300,'seo',1)"
+               id="flexCheckChecked">
+
+        <label class="form-check-label" for="flexCheckChecked">
+          Una consultoria SEO (300€)
+        </label>
+      </div>
+      <div class="form-check">
+
+        <input class="form-check-input" 
+               type="checkbox" 
+               formControlName="ads"
+               (change)="calcular(200,'ads',2)"
+               id="flexCheckChecked">
+
+        <label class="form-check-label" for="flexCheckChecked">
+          Una campanya de Google Ads (200€)
+        </label>
+      </div>
+      <div class="form-check">
+        <p>Total: {{total}}</p>
+      </div>
+
+</form>
+<div class="col-12">
+  <button 
+    type="button"
+    class="btn btn-primary"
+    routerLink=""
+  >
+    Tornar enrera
+  </button>
+</div>
+</div>
+
+
+
+
+

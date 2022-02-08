@@ -1,0 +1,50 @@
+<div class="row">
+<div class="col-sm-4 border border-dark border-4 rounded-3">
+<form [formGroup]="panellForm">
+    <!-- Pàgines -->
+    <div class="mb-3 pt-3 row">
+        <label class="col-sm-6 col-form-label">Número de pàgines</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <button class="btn btn-primary me-1" (click)="modificarPagines(+1); passarServeiWebAHome()">+</button>
+                    <input type="number"
+                            class="form-control"
+                            formControlName="pagines"
+                            (input)="passarServeiWebAHome()"
+                            >
+                            
+                    <button class="btn btn-primary ms-1" (click)="modificarPagines(-1); passarServeiWebAHome()"> - </button>
+                </div>
+                <span class="col-12 form-text text-danger"
+                *ngIf="campEsValid('pagines')">
+                El valor ha de ser 1 o més.
+                </span>
+            </div>
+        </div>
+    </div>    
+    <!--Idiomes -->
+    <div class="mb-3 row">
+        <label class="col-sm-6 col-form-label">Número d'idiomes</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <button class="btn btn-primary me-1" (click)="modificarIdiomes(+1); passarServeiWebAHome()">+</button>
+                    <input type="number"
+                            class="form-control"
+                            formControlName="idiomes"
+                            (input)="passarServeiWebAHome()"
+                            >
+                            
+                    <button class="btn btn-primary ms-1" (click)="modificarIdiomes(-1); passarServeiWebAHome()"> - </button>
+                </div>
+                <span class="col-12 form-text text-danger"
+                *ngIf="campEsValid('idiomes')">
+                El valor ha de ser 1 o més.
+                </span>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+</div>
